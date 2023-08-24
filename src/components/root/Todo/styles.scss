@@ -1,0 +1,22 @@
+@import "src/styles/base/vars";
+
+.todo-wrapper {
+  height: 60px;
+  width: 100%;
+
+  display: flex;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    width: 95%;
+  }
+}
+
+.text {
+  padding-left: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

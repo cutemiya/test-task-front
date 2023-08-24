@@ -1,0 +1,82 @@
+@import 'src/styles/base/vars';
+
+$colorsMapButton: (
+        'primary': (
+                'text': map-get($color-list, 'white'),
+                'border': map-get($color-list, 'primary_100'),
+                'background': map-get($color-list, 'primary_100'),
+                'hover': map-get($color-list, 'primary_200'),
+                'hover_border': map-get($color-list, 'primary_200'),
+                'active': map-get($color-list, 'primary_300'),
+                'active_border': map-get($color-list, 'primary_300'),
+        ),
+        'done': (
+                'text': map-get($color-list, 'white'),
+                'border': map-get($color-list, 'done100'),
+                'background': map-get($color-list, 'done100'),
+                'hover': map-get($color-list, 'done200'),
+                'hover_border': map-get($color-list, 'done200'),
+                'active': map-get($color-list, 'done300'),
+                'active_border': map-get($color-list, 'done300'),
+        ),
+        'wait': (
+                'text': map-get($color-list, 'white'),
+                'border': map-get($color-list, 'grey_100'),
+                'background': map-get($color-list, 'grey_100'),
+                'hover': map-get($color-list, 'grey_200'),
+                'hover_border': map-get($color-list, 'grey_200'),
+                'active': map-get($color-list, 'grey_300'),
+                'active_border': map-get($color-list, 'grey_300'),
+        ),
+        'delete': (
+                'text': map-get($color-list, 'white'),
+                'border': map-get($color-list, 'delete100'),
+                'background': map-get($color-list, 'delete100'),
+                'hover': map-get($color-list, 'delete200'),
+                'hover_border': map-get($color-list, 'delete200'),
+                'active': map-get($color-list, 'delete300'),
+                'active_border': map-get($color-list, 'delete300'),
+        ),
+);
+
+
+@mixin colorizeButton($bg: undefined, $border: undefined, $text: undefined) {
+  color: $text;
+  background-color: $bg;
+  border-color: $border;
+}
+
+
+@each $name, $colors in $colorsMapButton {
+  .btn_#{$name} {
+    box-shadow: none;
+
+    @include colorizeButton(
+                    map-get($colors, 'background'),
+                    map-get($colors, 'border'),
+                    map-get($colors, 'text'),
+    );
+
+    &:hover {
+      @include colorizeButton(
+                      map-get($colors, 'hover'),
+                      map-get($colors, 'hover_border'),
+                      map-get($colors, 'text'),
+      );
+    }
+
+    &:checked, &:active {
+      @include colorizeButton(
+                      map-get($colors, 'active'),
+                      map-get($colors, 'active_border'),
+                      map-get($colors, 'text'),
+      );
+    }
+  }
+}
+
+.base {
+  border-style: solid;
+  border-radius: 0;
+  padding: 13px 43px;
+}

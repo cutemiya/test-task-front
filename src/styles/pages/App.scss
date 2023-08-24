@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.todo-add-btn {
+  max-width: 1200px;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.modal-add-btn {
+  width: 100%;
+  margin-top: 16px;
+}

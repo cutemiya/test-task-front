@@ -1,0 +1,31 @@
+.description-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  width: 900px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.buttons {
+  width: 100%;
+  margin-top: 32px;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.modal-status-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
